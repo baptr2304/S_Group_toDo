@@ -1,0 +1,339 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+html {
+  font-size: 62.5%;
+  font-family: 'Open Sans', sans-serif;
+  body {
+    width: 80%;
+    margin-top: 2rem;
+    margin: 2rem auto;
+    font-size: var(--font-size-default);
+  }
+  .add-task,
+  .edit-task {
+    width: 30%;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    border: solid 0.1rem wheat;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: none;
+    border-radius: 1rem;
+  }
+  input{
+    border: solid 0.1rem #dbdbdb;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+}
+
+body {
+  header {
+    width: 100%;
+  }
+  .list-task {
+    @include centerDiv(space-between, flex-start);
+  }
+}
+header {
+  .logo-task {
+    width: 17rem;
+    height: 6rem;
+  }
+  .row-header {
+    width: 100%;
+    font-size: var(--font-size-default);
+    @include centerDiv(space-between, center);
+  }
+}
+.row-header {
+  .row-header__text {
+    @include centerDiv(center, center);
+  }
+  .row-header__add-task {
+    cursor: pointer;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    border-radius: 1rem;
+    padding: 0.1rem 1rem;
+    margin: 1rem;
+  }
+}
+.row-header__text {
+  .text__ic {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+.row-header__add-task {
+  p:before {
+    content: "\2b";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    padding-right: 0.2rem;
+  }
+  &:hover {
+    box-shadow: rgb(100 100 111 / 20%) 0px 5px 20px 0px
+  }
+}
+
+.list-task {
+  .column-list {
+    width: 30%;
+    height: 60vh;
+  }
+}
+.column-list {
+  .column-list__header {
+    width: 100%;
+  }
+  .column-list__body {
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 70vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dbdbdb;
+  border-radius: 0.5rem;
+}
+.column-list__body {
+  .card {
+    width: 100%;
+    border: #dbdbdb solid 0.1rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    display: flex;
+  }
+  .card + .card {
+    margin-top: 0.5rem;
+  }
+}
+.card {
+  .card-details-contain {
+    width: 85%;
+  }
+  .card-details-options {
+    width: 15%;
+    @include centerDiv(space-around, normal);
+    font-size: 2rem;
+    padding-left: 0.2rem;
+  }
+}
+.column-list__header {
+  .header--title {
+    @include centerDiv(space-between, center);
+    color: white;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    border-radius: 0.2rem;
+  }
+  .line--header {
+    width: 100%;
+    margin-top: 1rem;
+    height: 0.3rem;
+  }
+  .line-todo {
+    background-color: #00a6da;
+  }
+  .line-doing {
+    background-color: #dab700;
+  }
+  .line-done {
+    background-color: #3bc057;
+  }
+  .title-todo {
+    background-color: #00a6da;
+  }
+  .title-doing {
+    background-color: #ccac038f;
+  }
+  .title-done {
+    background-color: #3bc057;
+  }
+}
+.header--title {
+  span:last-child {
+    padding: 0.2rem 0.7rem;
+    text-align: center;
+    border-radius: 0.2rem;
+  }
+  #title-num--todo {
+    background-color: #00cdda;
+  }
+  #title-num--doing {
+    background-color: #dab700;
+  }
+  #title-num--done {
+    background-color: #69ce7e;
+  }
+}
+#form-add-task,
+#form-edit-task {
+  width: 100%;
+}
+
+// css form add task
+#form-add-task {
+  #add-task__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+  }
+  .add-task {
+    z-index: 2;
+    background-color: white;
+  }
+}
+.add-task {
+  .add-task__header {
+    @include centerDiv(center, center);
+    box-sizing: border-box;
+    border-radius: 0.2rem;
+  }
+  .add-task__body {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.add-task__body {
+  //set with input tag double
+  input {
+    width: 100%;
+    height: 4rem;
+    margin-top: 1rem;
+    border: #dbdbdb solid 0.1rem;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  textarea {
+    width: 100%;
+    height: 10rem;
+    margin-top: 1rem;
+    border: #dbdbdb solid 0.1rem;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+  }
+  .add-task__body--btn {
+    width: 100%;
+    margin-top: 1rem;
+    @include centerDiv(center, center);
+  }
+  i {
+    display: flex;
+  }
+}
+// css form edit task
+#form-edit-task {
+  #edit-task__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+  }
+  .edit-task {
+    z-index: 2;
+    background-color: white;
+  }
+}
+.edit-task {
+  .edit-task__header {
+    @include centerDiv(center, center);
+    box-sizing: border-box;
+    border-radius: 0.2rem;
+  }
+  .edit-task__body {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.edit-task__body {
+  .edit_radio-btn {
+    @include centerDiv(space-between, center);
+    margin-top: 1rem;
+  }
+}
+.btn-submit {
+  width: 100%;
+  height: 4rem;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: #00a6da;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  padding: 0.5rem;
+}
+@media(max-width: 768px){
+  body{
+    padding: 0;
+    position: relative;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  header{
+    @include centerDiv(center, center);
+    flex-direction: column;
+  }
+  header{
+    .row-header{
+      flex-direction: column;
+    }
+  }
+  .list-task{
+    flex-direction: column;
+  }
+  .list-task{
+    .column-list{
+      width: 100%;
+    }
+  }
+  .column-list{
+    .column-list__body{
+      height: auto;
+    }
+  }
+  #form-add-task{
+    .add-task{
+      width: 70%;
+      top:25%;
+    }
+  }
+  #form-edit-task{
+    .edit-task{
+      width: 70%;
+      top:25%;
+    }
+  }
+}

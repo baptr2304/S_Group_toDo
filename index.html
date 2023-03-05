@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./assets/styles/style.css" />
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+</head>
+
+<body>
+  <header>
+    <img class="logo-task" src="./assets/img/logoTask.png" alt="" />
+    <div class="row-header">
+      <div class="row-header__text">
+        <p>Let’s get shit done!</p>
+        <img class="text__ic" src="./assets/img/hiTask.png" alt="" />
+      </div>
+      <div class="row-header__add-task" onclick="showAddForm()">
+        <p>New task</p>
+      </div>
+    </div>
+  </header>
+  <div class="list-task">
+    <div class="column-list">
+      <div class="column-list__header">
+        <div class="header--title title-todo">
+          <span>Todo</span>
+          <span id="title-num--todo">3</span>
+        </div>
+        <div class="line--header line-todo"></div>
+      </div>
+      <div class="column-list__body" id="todo">
+        <div class="card">
+          <div class="card-details-contain">
+            <span class="card-details__category">Marketing</span>
+            <h3 class="card-details__title">
+              Write SEO article for new product
+            </h3>
+            <p class="card-details__content">
+              This is an existential moment for effective altruism and the
+              rationalist community writ-large.
+            </p>
+            <p class="card-details__time">
+              <i class="fa-regular fa-clock"></i>
+            </p>
+          </div>
+          <div class="card-details-options">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <i class="fa-solid fa-trash"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Doing-->
+    <div class="column-list">
+      <div class="column-list__header">
+        <div class="header--title title-doing">
+          <span>Doing</span>
+          <span id="title-num--doing">3</span>
+        </div>
+        <div class="line--header line-doing"></div>
+      </div>
+      <div class="column-list__body" id="doing"></div>
+    </div>
+    <!--finished-->
+    <div class="column-list">
+      <div class="column-list__header">
+        <div class="header--title title-done">
+          <span>Finished</span>
+          <span id="title-num--done">3</span>
+        </div>
+        <div class="line--header line-done"></div>
+      </div>
+      <div class="column-list__body" id="done"></div>
+    </div>
+  </div>
+  </div>
+  <!--add task-->
+  <div id="form-add-task">
+    <div id="add-task__overlay">
+    </div>
+    <div class="add-task" id="add-form">
+      <i class="fa-solid fa-times exit-btn__task " style="display: flex; justify-content: end; cursor: pointer;;"
+        onclick="closeAddForm()"></i>
+      <div class="add-task__header">
+        <h1 class="add-task__title">Add new todo</h1>
+      </div>
+      <div class="add-task__body">
+        <input type="text" placeholder="Category. Etc: Marketing..." id="category" class="input_add_task" />
+        <input type="text" placeholder="Title" id="title" class="input_add_task" />
+        <textarea name="" id="content" cols="30" rows="10" placeholder="Content" class="input_add_task"></textarea>
+        <div class="add-task__body--btn">
+          <button class="btn-add-task  btn-submit" onclick="submit_add()">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="form-edit-task">
+    <div id="edit-task__overlay">
+    </div>
+    <div class="edit-task" id="edit-form">
+      <p id="id-edit" style="display: none;"></p>
+      <i class="fa-solid fa-times exit-btn__task " style="display: flex; justify-content: end; cursor: pointer;;"
+        onclick="closeEditForm()"></i>
+      <div class="edit-task__header">
+        <h1 class="edit-task__title">Edit task</h1>
+      </div>
+      <div class="edit-task__body">
+        <input type="text" placeholder="Category. Etc: Marketing..." id="category-edit" class="input_add_task" />
+        <input type="text" placeholder="Title" id="title-edit" class="input_add_task" />
+        <textarea name="" id="content-edit" cols="30" rows="10" placeholder="Content" class="input_add_task"></textarea>
+        <div class="edit_radio-btn">
+          <div class="radio__item">
+            <input type="radio" name="status" id="todo-edit" value="todo" />
+            <label for="todo-edit">Todo</label>
+          </div>
+          <div class="radio__item">
+            <input type="radio" name="status" id="doing-edit" value="doing" />
+            <label for="doing-edit">Doing</label>
+          </div>
+          <div class="radio__item">
+            <input type="radio" name="status" id="done-edit" value="done" />
+            <label for="done-edit">Finished</label>
+          </div>
+      </div>
+        <div class="edit-task__body--btn">
+          <button class="btn-edit-task btn-submit" onclick="submit_edit()">Submit</button>
+        </div>
+    </div>
+  </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
