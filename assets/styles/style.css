@@ -1,5 +1,5 @@
 :root {
-  --font-size-default: 1.8rem;
+  --font-size-default: 1.7rem;
 }
 
 html {
@@ -29,6 +29,13 @@ html .edit-task {
   border-radius: 1rem;
 }
 html input {
+  border: solid 0.1rem #dbdbdb;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  margin-bottom: 0.5rem;
+}
+html textarea {
   border: solid 0.1rem #dbdbdb;
   border-radius: 0.5rem;
   padding: 0.5rem;
@@ -63,9 +70,9 @@ header .row-header {
 }
 .row-header .row-header__add-task {
   cursor: pointer;
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 0.2rem 0.8rem 0;
   border-radius: 1rem;
-  padding: 0.1rem 1rem;
+  padding: 0 2rem;
   margin: 1rem;
 }
 
@@ -81,7 +88,7 @@ header .row-header {
   padding-right: 0.2rem;
 }
 .row-header__add-task:hover {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 20px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 0.5rem 2rem 0;
 }
 
 .list-task .column-list {

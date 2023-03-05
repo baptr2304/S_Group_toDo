@@ -7,7 +7,6 @@ var task = {
     status: ""
 };
 var tasks = [];
-
 function displayTasks() {
     document.getElementById("todo").innerHTML = "";
     document.getElementById("doing").innerHTML = "";
@@ -26,7 +25,7 @@ function displayTasks() {
             '</div>' +
             '<div class="card-details-options">' +
             '<i class="fa-solid fa-pen-to-square" onclick="showEditForm(' + task.id + ')" style="cursor: pointer;"></i>' +
-            '<i class="fa-solid fa-trash" onclick="deleteTask(' + task.id + ')"></i>' +
+            '<i class="fa-solid fa-trash" style="cursor: pointer;" onclick="deleteTask(' + task.id + ')"></i>' +
             '</div>' +
             '</div>';
         if (task.status === "todo") {
@@ -124,11 +123,8 @@ function submit_edit() {
         document.getElementById("edit-task__overlay").style.display = "none";
     }
     console.log(category, title, content, time, status, id);
-
-
-
 }
-
+//show add-task form
 function showAddForm() {
     document.getElementById("add-form").style.display = "block";
     document.getElementById("add-task__overlay").style.display = "block";
@@ -141,14 +137,14 @@ function showAddForm() {
     for (let i = 0; i < input_add_task.length; i++) {
         input_add_task[i].style.border = "1px solid #ccc";
     }
-
 }
 
+// close add-task form
 function closeAddForm() {
     document.getElementById("add-form").style.display = "none";
     document.getElementById("add-task__overlay").style.display = "none";
-
 }
+
 //show edit-task form and value the task by id
 function showEditForm(id) {
     console.log(id);
@@ -176,6 +172,7 @@ function showEditForm(id) {
     }
 }
 
+// close edit-task form
 function closeEditForm() {
     document.getElementById("edit-form").style.display = "none";
     document.getElementById("edit-task__overlay").style.display = "none";
@@ -190,6 +187,7 @@ function deleteTask(id) {
     displayTasks();
 }
 
+//count task by status
 function countTask() {
     // todo
     var todo = 0;
@@ -198,7 +196,6 @@ function countTask() {
             todo++;
         }
     }
-
     // doing
     var doing = 0;
     for (var i = 0; i < tasks.length; i++) {
@@ -206,7 +203,6 @@ function countTask() {
             doing++;
         }
     }
-
     // done
     var done = 0;
     for (var i = 0; i < tasks.length; i++) {

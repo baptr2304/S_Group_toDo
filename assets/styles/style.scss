@@ -2,7 +2,7 @@
 @import "_mixins.scss";
 html {
   font-size: 62.5%;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   body {
     width: 80%;
     margin-top: 2rem;
@@ -25,7 +25,14 @@ html {
     display: none;
     border-radius: 1rem;
   }
-  input{
+  input {
+    border: solid 0.1rem #dbdbdb;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+  }
+  textarea {
     border: solid 0.1rem #dbdbdb;
     border-radius: 0.5rem;
     padding: 0.5rem;
@@ -58,9 +65,9 @@ header {
   }
   .row-header__add-task {
     cursor: pointer;
-    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    box-shadow: rgb(99 99 99 / 20%) 0px 0.2rem 0.8rem 0;
     border-radius: 1rem;
-    padding: 0.1rem 1rem;
+    padding: 0 2rem;
     margin: 1rem;
   }
 }
@@ -78,7 +85,7 @@ header {
     padding-right: 0.2rem;
   }
   &:hover {
-    box-shadow: rgb(100 100 111 / 20%) 0px 5px 20px 0px
+    box-shadow: rgb(100 100 111 / 20%) 0 0.5rem 2rem 0;
   }
 }
 
@@ -211,6 +218,7 @@ header {
     box-sizing: border-box;
     border-radius: 0.2rem;
   }
+
   .add-task__body {
     display: flex;
     flex-direction: column;
@@ -295,45 +303,45 @@ header {
   box-sizing: border-box;
   padding: 0.5rem;
 }
-@media(max-width: 768px){
-  body{
+@media (max-width: 768px) {
+  body {
     padding: 0;
     position: relative;
     margin: 0 !important;
     width: 100% !important;
   }
-  header{
+  header {
     @include centerDiv(center, center);
     flex-direction: column;
   }
-  header{
-    .row-header{
+  header {
+    .row-header {
       flex-direction: column;
     }
   }
-  .list-task{
+  .list-task {
     flex-direction: column;
   }
-  .list-task{
-    .column-list{
+  .list-task {
+    .column-list {
       width: 100%;
     }
   }
-  .column-list{
-    .column-list__body{
+  .column-list {
+    .column-list__body {
       height: auto;
     }
   }
-  #form-add-task{
-    .add-task{
+  #form-add-task {
+    .add-task {
       width: 70%;
-      top:25%;
+      top: 25%;
     }
   }
-  #form-edit-task{
-    .edit-task{
+  #form-edit-task {
+    .edit-task {
       width: 70%;
-      top:25%;
+      top: 25%;
     }
   }
 }
